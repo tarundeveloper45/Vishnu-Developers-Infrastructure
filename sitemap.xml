@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Replace example.com after the production domain is confirmed. -->
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/about.html</loc></url>
+  <url><loc>https://example.com/vishnu-city.html</loc></url>
+  <url><loc>https://example.com/residences.html</loc></url>
+  <url><loc>https://example.com/floor-plans.html</loc></url>
+  <url><loc>https://example.com/gallery.html</loc></url>
+  <url><loc>https://example.com/contact.html</loc></url>
+</urlset>
