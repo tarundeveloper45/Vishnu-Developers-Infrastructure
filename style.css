@@ -3,7 +3,7 @@
 .hero-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 32%,var(--navy-light) 0%,var(--navy) 72%)}
 .hero-brand:after{content:none}
 .hero-brand .hero-content{max-width:760px;padding:7rem 0 4rem}
-.hero-brand .hero-actions,.hero-brand .hero-facts{justify-content:center}
+.hero-brand .hero-actions,.hero-brand .hero-facts,.hero-brand .eyebrow{justify-content:center}
 .hero-brand .hero-facts{border-top:1px solid rgba(255,255,255,.25)}
 .hero-brand .hero-facts span{text-align:left}
 .brand-seal{position:relative;width:min(260px,60vw);margin:0 auto 2rem}
