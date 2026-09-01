@@ -37,11 +37,11 @@
             <p>Thoughtfully planned residential spaces shaped by quality, functionality and long-term value.</p>
             <em>We Nurture Your Dreams</em>
           </div>
-          <div><h3>Quick Links</h3><a href="about.html">About Us</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a></div>
-          <div><h3>Vishnu City</h3><a href="vishnu-city.html">Project Overview</a><a href="residences.html">Residences</a><a href="floor-plans.html">Floor Plans</a><a href="vishnu-city.html#amenities">Amenities</a></div>
+          <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About Us</a><a href="team.html">Team</a><a href="contact.html">Contact Us</a></div>
+          <div><h3>Vishnu City</h3><a href="vishnu-city.html">Project Overview</a><a href="residences.html">Residences</a><a href="floor-plans.html">Floor Plans</a><a href="vishnu-city.html#amenities">Amenities</a><a href="gallery.html">Gallery</a></div>
           <div><h3>Contact</h3>${C.phones.map(p => `<a href="tel:${p}">${p}</a>`).join("")}<span>${C.email}</span><span>${C.address}</span><a href="https://wa.me/${C.whatsapp}" target="_blank" rel="noopener">WhatsApp</a></div>
         </div>
-        <div class="shell footer-bottom"><p>${C.disclaimer}</p><div><a href="terms.html">Terms & Conditions</a><span>© ${new Date().getFullYear()} ${C.company}</span></div></div>
+        <div class="shell footer-bottom"><p>${C.disclaimer}</p><div><a href="terms.html">Terms & Conditions</a><a href="privacy-policy.html">Privacy Policy</a><span>© ${new Date().getFullYear()} ${C.company}</span></div></div>
       </footer>`;
   }
 

@@ -11,14 +11,10 @@ window.VDI_CONFIG = {
   disclaimer: "Project information, specifications and artistic representations are subject to change and final confirmation by the developer.",
   nav: [
     ["Home", "index.html", "home"],
-    ["About", "about.html", "about"],
+    ["About Us", "about.html", "about"],
     ["Vishnu City", "vishnu-city.html", "project"],
-    ["Residences", "residences.html", "residences"],
-    ["Floor Plans", "floor-plans.html", "plans"],
-    ["Amenities", "vishnu-city.html#amenities", "amenities"],
-    ["Gallery", "gallery.html", "gallery"],
-    ["Location", "vishnu-city.html#location", "location"],
-    ["Contact", "contact.html", "contact"]
+    ["Team", "team.html", "team"],
+    ["Contact Us", "contact.html", "contact"]
   ],
   plans: {
     "3bhk": {
