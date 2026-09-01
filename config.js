@@ -12,8 +12,8 @@ window.VDI_CONFIG = {
   nav: [
     ["Home", "index.html", "home"],
     ["About Us", "about.html", "about"],
-    ["Vishnu City", "vishnu-city.html", "project"],
     ["Team", "team.html", "team"],
+    ["Vishnu City", "vishnu-city.html", "project"],
     ["Contact Us", "contact.html", "contact"]
   ],
   plans: {
