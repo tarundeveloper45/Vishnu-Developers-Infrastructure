@@ -61,6 +61,29 @@
     reveals.forEach(el => observer.observe(el));
   } else reveals.forEach(el => el.classList.add("visible"));
 
+  const counters = document.querySelectorAll("[data-count]");
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || "";
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (counters.length) {
+    if ("IntersectionObserver" in window) {
+      const counterObserver = new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }
+      }), {threshold:.6});
+      counters.forEach(el => counterObserver.observe(el));
+    } else counters.forEach(el => { el.textContent = el.dataset.count + (el.dataset.suffix || ""); });
+  }
+
   const dialog = document.querySelector("#lightbox");
   let previousFocus;
   function openModal(src, title, text = "") {
