@@ -53,16 +53,9 @@
   }));
   window.addEventListener("scroll", () => document.body.classList.toggle("scrolled", scrollY > 24), {passive:true});
 
-  const reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); }
-    }), {threshold:.12});
-    reveals.forEach(el => observer.observe(el));
-  } else reveals.forEach(el => el.classList.add("visible"));
-
-  const counters = document.querySelectorAll("[data-count]");
   function animateCounter(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = "1";
     const target = parseInt(el.dataset.count, 10);
     const suffix = el.dataset.suffix || "";
     const duration = 1200;
@@ -75,14 +68,23 @@
     }
     requestAnimationFrame(tick);
   }
-  if (counters.length) {
-    if ("IntersectionObserver" in window) {
-      const counterObserver = new IntersectionObserver(entries => entries.forEach(e => {
-        if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }
-      }), {threshold:.6});
-      counters.forEach(el => counterObserver.observe(el));
-    } else counters.forEach(el => { el.textContent = el.dataset.count + (el.dataset.suffix || ""); });
+  function revealTarget(el) {
+    el.classList.add("visible");
+    el.querySelectorAll("[data-count]").forEach(animateCounter);
   }
+
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { revealTarget(e.target); observer.unobserve(e.target); }
+    }), {threshold:.12});
+    reveals.forEach(el => observer.observe(el));
+  } else reveals.forEach(revealTarget);
+
+  document.querySelectorAll("[data-count]").forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) animateCounter(el);
+  });
 
   const dialog = document.querySelector("#lightbox");
   let previousFocus;
