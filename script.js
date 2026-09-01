@@ -8,12 +8,6 @@
   if (headerRoot) {
     headerRoot.innerHTML = `
       <header class="site-header">
-        <div class="topbar">
-          <div class="shell topbar-inner">
-            <div class="topbar-links"><span>${C.approval}</span>${C.phones.map(p => `<a href="tel:${p}">Call ${p}</a>`).join("")}</div>
-            <div class="topbar-links"><a href="contact.html#visit">Schedule a Site Visit</a><a href="https://wa.me/${C.whatsapp}" target="_blank" rel="noopener">WhatsApp</a><span>Location to be confirmed</span></div>
-          </div>
-        </div>
         <div class="nav-wrap">
           <div class="shell nav-inner">
             <a class="brand" href="index.html" aria-label="${C.company} home">
