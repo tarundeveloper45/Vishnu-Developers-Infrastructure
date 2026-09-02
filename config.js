@@ -22,7 +22,6 @@ window.VDI_CONFIG = {
       image: "assets/vishnu-city/floor-plan-new.jpeg",
       description: "A spacious family layout balancing privacy, natural movement and connected living."
     },
-    "4bhk": { title: "4BHK Residence", area: "Area to be confirmed", image: "", description: "Configuration and verified plan details will be added after client confirmation." },
     "stilt": {
       title: "Stilt Floor",
       area: "1537.05 sq. ft.",
