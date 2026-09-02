@@ -11,8 +11,8 @@ window.VDI_CONFIG = {
   disclaimer: "Project information, specifications and artistic representations are subject to change and final confirmation by the developer.",
   nav: [
     ["About Us", "about.html", "about"],
-    ["Team", "team.html", "team"],
     ["Vishnu City", "vishnu-city.html", "project"],
+    ["Team", "team.html", "team"],
     ["Contact Us", "contact.html", "contact"]
   ],
   plans: {
