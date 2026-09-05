@@ -90,3 +90,9 @@ html,body{max-width:100%;overflow-x:hidden}.hero-bg,.media-frame img[src$="/hero
   .cta .shell,.cta .shell>div{width:100%;max-width:100%}
   .cta .btn{width:100%;max-width:100%;margin:.3rem 0;white-space:normal;text-align:center}
 }
+
+.about-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.about-hero .eyebrow{font-size:1rem}
+.about-hero h1{font-size:clamp(2.3rem,3.6vw,3.4rem)}
+.about-hero-grid>p{align-self:center;margin:0}
+@media(max-width:900px){.about-hero-grid{grid-template-columns:1fr;gap:1.5rem}}
