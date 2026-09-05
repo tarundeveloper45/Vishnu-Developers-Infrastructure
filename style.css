@@ -96,3 +96,6 @@ html,body{max-width:100%;overflow-x:hidden}.hero-bg,.media-frame img[src$="/hero
 .about-hero h1{font-size:clamp(2.3rem,3.6vw,3.4rem)}
 .about-hero-grid>p{align-self:center;margin:0}
 @media(max-width:900px){.about-hero-grid{grid-template-columns:1fr;gap:1.5rem}}
+.media-frame.graphic{min-height:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:none}
+.media-frame.graphic:after{display:none}
+.media-frame.graphic img{position:static;width:100%;height:auto;object-fit:contain}
