@@ -15,9 +15,8 @@
               <span><strong>Vishnu</strong><small>Developers & Infrastructure</small></span>
             </a>
             <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><b class="sr-only">Open navigation</b></button>
-            <nav id="primary-nav" aria-label="Primary navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
-            <div class="nav-actions"><a class="btn btn-line" href="${C.brochure}" target="_blank">Brochure</a><a class="btn btn-gold" href="contact.html#visit">Schedule Visit</a></div>
           </div>
+          <nav id="primary-nav" aria-label="Primary navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
         </div>
       </header>`;
   }
