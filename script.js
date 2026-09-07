@@ -13,7 +13,7 @@
             <a class="brand-logo" href="index.html" aria-label="${C.company} home">
               <img src="assets/vishnu-logo-small.png" width="58" height="58" alt="Vishnu Developers and Infrastructure emblem">
             </a>
-            <a class="brand-title" href="index.html"><strong>Vishnu</strong><small>Developers & Infrastructure</small></a>
+            <a class="brand-title" href="index.html"><span class="brand-full">Vishnu Developers &amp; Infrastructure</span><span class="brand-short">Vishnu</span></a>
             <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><b class="sr-only">Open navigation</b></button>
           </div>
           <nav id="primary-nav" aria-label="Primary navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
