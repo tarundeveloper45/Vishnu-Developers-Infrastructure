@@ -10,10 +10,10 @@
       <header class="site-header">
         <div class="nav-wrap">
           <div class="shell nav-inner">
-            <a class="brand" href="index.html" aria-label="${C.company} home">
+            <a class="brand-logo" href="index.html" aria-label="${C.company} home">
               <img src="assets/vishnu-logo-small.png" width="58" height="58" alt="Vishnu Developers and Infrastructure emblem">
-              <span><strong>Vishnu</strong><small>Developers & Infrastructure</small></span>
             </a>
+            <a class="brand-title" href="index.html"><strong>Vishnu</strong><small>Developers & Infrastructure</small></a>
             <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><b class="sr-only">Open navigation</b></button>
           </div>
           <nav id="primary-nav" aria-label="Primary navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
