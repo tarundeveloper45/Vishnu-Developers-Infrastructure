@@ -25,17 +25,7 @@
   if (footerRoot) {
     footerRoot.innerHTML = `
       <footer class="footer">
-        <div class="shell footer-grid">
-          <div class="footer-brand">
-            <a class="brand brand-light" href="index.html"><img src="assets/vishnu-logo-small.png" width="58" height="58" alt=""><span><strong>Vishnu</strong><small>Developers & Infrastructure</small></span></a>
-            <p>Thoughtfully planned residential spaces shaped by quality, functionality and long-term value.</p>
-            <em>We Nurture Your Dreams</em>
-          </div>
-          <div><h3>Quick Links</h3><a href="about.html">About Us</a><a href="team.html">Team</a><a href="vishnu-city.html">Vishnu City</a><a href="contact.html">Contact Us</a></div>
-          <div><h3>Vishnu City</h3><a href="vishnu-city.html">Project Overview</a><a href="residences.html">Residences</a><a href="floor-plans.html">Floor Plans</a><a href="vishnu-city.html#amenities">Amenities</a><a href="gallery.html">Gallery</a></div>
-          <div><h3>Contact</h3>${C.phones.map(p => `<a href="tel:${p}">${p}</a>`).join("")}<span>${C.email}</span><span>${C.address}</span><a href="https://wa.me/${C.whatsapp}" target="_blank" rel="noopener">WhatsApp</a></div>
-        </div>
-        <div class="shell footer-bottom"><p>${C.disclaimer}</p><div><a href="terms.html">Terms & Conditions</a><a href="privacy-policy.html">Privacy Policy</a><span>© ${new Date().getFullYear()} ${C.company}</span></div></div>
+        <nav class="shell footer-nav" aria-label="Footer navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
       </footer>`;
   }
 
