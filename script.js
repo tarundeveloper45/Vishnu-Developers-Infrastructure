@@ -76,6 +76,38 @@
     if (rect.top < window.innerHeight && rect.bottom > 0) animateCounter(el);
   });
 
+  document.querySelectorAll("[data-carousel]").forEach(root => {
+    const slides = [...root.querySelectorAll(".carousel-slide")];
+    const caption = root.querySelector(".carousel-caption");
+    const dotsWrap = root.querySelector(".carousel-dots");
+    if (!slides.length) return;
+    let idx = 0, timer;
+    slides.forEach((slide, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Go to photo ${i + 1}`);
+      dot.addEventListener("click", () => show(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = [...dotsWrap.children];
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle("active", j === idx));
+      dots.forEach((d, j) => d.classList.toggle("active", j === idx));
+      caption.textContent = slides[idx].dataset.caption || "";
+    }
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(() => show(idx + 1), 4500);
+    }
+    root.querySelector(".carousel-btn.prev")?.addEventListener("click", () => { show(idx - 1); restart(); });
+    root.querySelector(".carousel-btn.next")?.addEventListener("click", () => { show(idx + 1); restart(); });
+    root.addEventListener("mouseenter", () => clearInterval(timer));
+    root.addEventListener("mouseleave", restart);
+    show(0);
+    restart();
+  });
+
   const dialog = document.querySelector("#lightbox");
   let previousFocus;
   function openModal(src, title, text = "") {
