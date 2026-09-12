@@ -3,7 +3,7 @@ window.VDI_CONFIG = {
   project: "Vishnu City",
   phones: ["8393010100", "8395010100"],
   whatsapp: "918393010100",
-  email: "Email to be confirmed",
+  email: "vishnudeveloper2027@gmail.com",
   address: "Baraut, Uttar Pradesh 250611",
   approval: "BBKDA Approved",
   brochure: "assets/Vishnu-City-Brochure.pdf",
