@@ -8,6 +8,7 @@
   if (headerRoot) {
     headerRoot.innerHTML = `
       <header class="site-header">
+        <div class="header-topbar"><div class="shell topbar-inner"><a href="mailto:${C.email}">${C.email}</a><a href="tel:${C.phones[0]}">${C.phones[0]}</a></div></div>
         <div class="nav-wrap">
           <div class="shell nav-inner">
             <a class="brand-logo" href="index.html" aria-label="${C.company} home">
@@ -84,7 +85,7 @@
     function show(i) {
       idx = (i + slides.length) % slides.length;
       slides.forEach((s, j) => s.classList.toggle("active", j === idx));
-      caption.textContent = slides[idx].dataset.caption || "";
+      if (caption) caption.textContent = slides[idx].dataset.caption || "";
     }
     show(0);
     setInterval(() => show(idx + 1), 4500);
