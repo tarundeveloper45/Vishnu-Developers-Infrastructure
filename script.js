@@ -24,8 +24,7 @@
   if (footerRoot) {
     footerRoot.innerHTML = `
       <footer class="footer">
-        <div class="shell footer-contact"><a href="mailto:${C.email}">${C.email}</a><a href="tel:${C.phones[0]}">${C.phones[0]}</a></div>
-        <nav class="shell footer-nav" aria-label="Footer navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
+        <nav class="shell footer-nav" aria-label="Footer navigation"><a class="footer-mail" href="mailto:${C.email}">${C.email}</a>${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}<a class="footer-phone" href="tel:${C.phones[0]}">${C.phones[0]}</a></nav>
       </footer>`;
   }
 
