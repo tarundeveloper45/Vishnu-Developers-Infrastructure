@@ -89,6 +89,15 @@
     setInterval(() => show(idx + 1), 4500);
   });
 
+  document.querySelectorAll("[data-tabs]").forEach(root => {
+    const btns = [...root.querySelectorAll(".tab-list button")];
+    const panels = [...root.querySelectorAll(".tab-panel")];
+    btns.forEach((btn, i) => btn.addEventListener("click", () => {
+      btns.forEach((b, j) => { b.classList.toggle("active", i === j); b.setAttribute("aria-selected", String(i === j)); });
+      panels.forEach((p, j) => p.classList.toggle("active", i === j));
+    }));
+  });
+
   const dialog = document.querySelector("#lightbox");
   let previousFocus;
   function openModal(src, title, text = "") {
