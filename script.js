@@ -10,10 +10,10 @@
       <header class="site-header">
         <div class="nav-wrap">
           <div class="shell nav-inner">
-            <a class="brand-logo" href="index.html" aria-label="${C.company} home">
+            <a class="brand-logo" href="./" aria-label="${C.company} home">
               <img src="assets/vishnu-logo-small.png" width="58" height="58" alt="Vishnu Developers and Infrastructure emblem">
             </a>
-            <a class="brand-title" href="index.html"><span class="brand-full">Vishnu Developers &amp; Infrastructure</span><span class="brand-short">Vishnu</span></a>
+            <a class="brand-title" href="./"><span class="brand-full">Vishnu Developers &amp; Infrastructure</span><span class="brand-short">Vishnu</span></a>
             <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><b class="sr-only">Open navigation</b></button>
           </div>
           <nav id="primary-nav" aria-label="Primary navigation">${C.nav.map(([label, href, key]) => `<a href="${href}"${key === page ? ` class="active" aria-current="page"` : ""}>${label}</a>`).join("")}</nav>
@@ -28,7 +28,7 @@
       </footer>`;
   }
 
-  if (mobileRoot) mobileRoot.innerHTML = `<div class="mobile-cta"><a href="tel:${C.phones[0]}">Call</a><a href="https://wa.me/${C.whatsapp}">WhatsApp</a><a class="main" href="contact.html#visit">Book Visit</a></div>`;
+  if (mobileRoot) mobileRoot.innerHTML = `<div class="mobile-cta"><a href="tel:${C.phones[0]}">Call</a><a href="https://wa.me/${C.whatsapp}">WhatsApp</a><a class="main" href="contact#visit">Book Visit</a></div>`;
 
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("#primary-nav");
@@ -132,7 +132,7 @@
   function showPlan(key) {
     const p = C.plans[key]; if (!p || !planPanel) return;
     planButtons.forEach(b => { const active = b.dataset.plan === key; b.classList.toggle("active", active); b.setAttribute("aria-selected", active); });
-    planPanel.innerHTML = `<div class="plan-visual">${p.image ? `<img src="${p.image}" alt="${p.title} floor plan">` : `<div class="asset-placeholder"><span>Verified drawing pending</span></div>`}</div><div class="plan-copy"><span class="eyebrow">Residence plan</span><h3>${p.title}</h3><strong>${p.area}</strong><p>${p.description}</p>${p.image ? `<button class="btn btn-gold" data-modal-image="${p.image}" data-modal-title="${p.title}" data-modal-copy="${p.area}">Zoom plan</button>` : ""}<a class="text-link" href="contact.html#visit">Enquire about this residence →</a></div>`;
+    planPanel.innerHTML = `<div class="plan-visual">${p.image ? `<img src="${p.image}" alt="${p.title} floor plan">` : `<div class="asset-placeholder"><span>Verified drawing pending</span></div>`}</div><div class="plan-copy"><span class="eyebrow">Residence plan</span><h3>${p.title}</h3><strong>${p.area}</strong><p>${p.description}</p>${p.image ? `<button class="btn btn-gold" data-modal-image="${p.image}" data-modal-title="${p.title}" data-modal-copy="${p.area}">Zoom plan</button>` : ""}<a class="text-link" href="contact#visit">Enquire about this residence →</a></div>`;
   }
   planButtons.forEach(b => b.addEventListener("click", () => showPlan(b.dataset.plan)));
   if (planButtons.length) showPlan(planButtons[0].dataset.plan);

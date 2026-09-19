@@ -10,11 +10,11 @@ window.VDI_CONFIG = {
   formEndpoint: "",
   disclaimer: "Project information, specifications and artistic representations are subject to change and final confirmation by the developer.",
   nav: [
-    ["Home", "index.html", "home"],
-    ["About Us", "about.html", "about"],
-    ["Vishnu City", "vishnu-city.html", "project"],
-    ["Team", "team.html", "team"],
-    ["Contact Us", "contact.html", "contact"]
+    ["Home", "./", "home"],
+    ["About Us", "about", "about"],
+    ["Vishnu City", "vishnu-city", "project"],
+    ["Team", "team", "team"],
+    ["Contact Us", "contact", "contact"]
   ],
   plans: {
     "3bhk": {
