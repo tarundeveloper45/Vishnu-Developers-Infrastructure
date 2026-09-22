@@ -7,7 +7,7 @@ window.VDI_CONFIG = {
   address: "Baraut, Uttar Pradesh 250611",
   approval: "BBKDA Approved",
   brochure: "assets/Vishnu-City-Brochure.pdf",
-  formEndpoint: "",
+  formEndpoint: "send-enquiry.php",
   disclaimer: "Project information, specifications and artistic representations are subject to change and final confirmation by the developer.",
   nav: [
     ["Home", "./", "home"],

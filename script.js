@@ -142,13 +142,28 @@
     btn.setAttribute("aria-expanded", String(open));
   }));
 
-  document.querySelectorAll(".lead-form").forEach(form => form.addEventListener("submit", e => {
+  document.querySelectorAll(".lead-form").forEach(form => form.addEventListener("submit", async e => {
     e.preventDefault();
     const status = form.querySelector(".form-status");
     if (!form.checkValidity()) { form.reportValidity(); status.textContent = "Please complete the required fields."; return; }
     const date = form.querySelector('[name="date"]');
     if (date?.value && new Date(date.value + "T00:00:00") < new Date(new Date().toDateString())) { status.textContent = "Please select a future date."; date.focus(); return; }
-    status.textContent = C.formEndpoint ? "Sending your request…" : `Your details are ready. Online submission is not connected yet—please call ${C.phones[0]} to confirm your visit.`;
+    const submit = form.querySelector('[type="submit"]');
+    submit.disabled = true;
+    status.textContent = "Sending your request…";
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {"Accept": "application/json", "X-Requested-With": "fetch"}
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) { status.textContent = data.message || "Thank you. We will contact you shortly."; form.reset(); }
+      else status.textContent = data.message || `Sorry, that did not go through. Please call ${C.phones[0]}.`;
+    } catch {
+      status.textContent = `Sorry, that did not go through. Please call ${C.phones[0]}.`;
+    }
+    submit.disabled = false;
   }));
 
   const loader = document.querySelector(".loader");
